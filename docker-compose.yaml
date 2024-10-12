@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15.6
+    container_name: astrologer-db
+    ports:
+      - '8015:5432'
+    networks:
+      - app
+    environment:
+      POSTGRES_PASSWORD: dev
+    restart: always
+    volumes :
+      - astrologer-db:/var/lib/postgresql/data
+
+
